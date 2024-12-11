@@ -1,0 +1,83 @@
+.header {
+  position: fixed; /* Закрепляем хедер сверху */
+  top: 0;
+  left: 0;
+  width: 100%; /* Растягиваем на всю ширину */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для отделения от контента */
+  z-index: 1000; /* Поверх остальных элементов */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  margin-left: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px; /* Скругление только слева */
+  width: 290px;
+  height: 20px;
+  font-size: 17px; /* Увеличиваем размер шрифта */
+}
+
+.search-button {
+  border: none;
+  background-color: #ACCFB2;
+  padding: 10px;
+  border-radius: 0 5px 5px 0; /* Скругление только справа */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-left: none; /* Убираем границу между строкой и кнопкой */
+}
+
+.search-button img {
+  width: 20px; /* Размер иконки */
+  height: 20px;
+}
+
+
+.login-button {
+  margin-right: 70px; /* Увеличьте или уменьшите значение по необходимости */
+  padding: 7px 30px; /* Увеличиваем отступы для большей кнопки */
+  background-color: #fff; /* Цвет фона (синий) */
+  color: #000000; /* Цвет текста (черный) */
+  border: 1px solid #000;
+  border-radius: 5px; /* Закругляем углы */
+  cursor: pointer; /* Указываем, что это кнопка */
+  transition: background-color 0.3s ease; /* Плавный переход для фона */
+  font-size: 18px; /* Увеличиваем размер шрифта */
+}
+
+.login-button:hover {
+  background-color: #000; /* Черный цвет фона при наведении */
+  color: #fff; /* Белый цвет текста при наведении */
+}
+
+nav a {
+  color: #000; /* Черный цвет текста */
+  font-size: 23px; /* Увеличьте размер шрифта по необходимости */
+  text-decoration: none; /* Убираем подчеркивание */
+}
