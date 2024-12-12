@@ -1,9 +1,13 @@
 .registration-form {
+  width: 400px; /* Совпадает с ImageSection */
+  height: 500px; /* Совпадает с ImageSection */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Равномерное распределение контента */
   background: #fff;
-  padding: 20px;
   border-radius: 10px;
+  padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 325px;
 }
 
 .registration-form h2 {
@@ -20,14 +24,19 @@
 }
 
 .submit-button {
-  background: #5cb85c;
-  color: #fff;
+  background: #ACCFB2;
+  color: #000; /* Изменение цвета текста на чёрный */
   border: none;
   padding: 10px;
-  width: 100%;
+  width: 40%;
+  height: 10%;
   border-radius: 5px;
   cursor: pointer;
+  margin: 0 auto; /* Центрирование кнопки */
+  display: block;
+  font-size: 15px; /* Увеличение размера шрифта */
 }
+
 
 .password-container {
   position: relative;
@@ -62,4 +71,22 @@
 .dob-gender-container input:not(:last-child),
 .city-language-container input:not(:last-child) {
     margin-right: 4%; /* Отступ между полями */
+}
+
+
+.registration-form p {
+  text-align: center; /* Центрирование текста */
+  color: #000; /* Чёрный цвет текста */
+  font-size: 14px; /* Увеличение шрифта, если необходимо */
+}
+
+.registration-form p a {
+  color: #000; /* Чёрный цвет ссылки */
+  text-decoration: underline; /* Подчёркивание для ссылки */
+  font-weight: bold; /* Жирность текста ссылки (опционально) */
+}
+
+.registration-form p a:hover {
+  color: #ff8989; /* Зелёный цвет при наведении (опционально) */
+  text-decoration: none; /* Убираем подчёркивание при наведении (опционально) */
 }

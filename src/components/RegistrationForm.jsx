@@ -15,14 +15,27 @@ const RegistrationForm = () => {
         <input type="text" placeholder="Имя" required />
         <input type="text" placeholder="Фамилия" required />
       </div>
-      <input type="email" placeholder="Адрес эл. почты" required />
+      <input 
+        type="email" 
+        placeholder="Адрес эл. почты" 
+        required 
+        autocomplete="email"  // Добавлено автозаполнение для email
+      />
       <div className="dob-gender-container">
         <input type="date" placeholder="Дата рождения" required />
         <input type="text" placeholder="Пол" />
       </div>
       <div className="city-language-container">
-        <input type="text" placeholder="Город" />
-        <input type="text" placeholder="Язык" />
+        <input 
+          type="text" 
+          placeholder="Город" 
+          autocomplete="off"  // Добавлено отключение автозаполнения
+        />
+        <input 
+          type="text" 
+          placeholder="Язык" 
+          autocomplete="off"  // Добавлено отключение автозаполнения
+        />
       </div>
       <div className="password-container">
         <input
