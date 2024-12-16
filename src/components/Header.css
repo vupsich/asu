@@ -13,16 +13,27 @@
 }
 
 .logo {
-  font-size: 24px;
+  font-family: 'Pobeda', sans-serif; /* Применяем шрифт Pobeda */
+  font-size: 40px;
   font-weight: bold;
   color: #000;
-  margin-left: 20px;
+  margin-left: 10px;
 }
+
+.clickable-logo {
+  text-decoration: none; /* Убираем подчеркивание */
+  color: inherit; /* Унаследуем цвет от родителя */
+}
+
+.red-letter {
+  color: red; /* Цвет первой буквы */
+}
+
 
 nav {
   display: flex;
   align-items: center;
-  gap: 150px;
+  gap: 110px;
 }
 
 .search-container {
@@ -60,12 +71,24 @@ nav {
 
 
 .login-button {
-  margin-right: 70px; /* Увеличьте или уменьшите значение по необходимости */
+  
   padding: 7px 30px; /* Увеличиваем отступы для большей кнопки */
   background-color: #fff; /* Цвет фона (синий) */
   color: #000000; /* Цвет текста (черный) */
   border: 1px solid #000;
-  border-radius: 5px; /* Закругляем углы */
+  border-radius: 7px; /* Закругляем углы */
+  cursor: pointer; /* Указываем, что это кнопка */
+  transition: background-color 0.3s ease; /* Плавный переход для фона */
+  font-size: 18px; /* Увеличиваем размер шрифта */
+}
+
+.register-button {
+  margin-right: 60px; /* Увеличьте или уменьшите значение по необходимости */
+  padding: 7px 30px; /* Увеличиваем отступы для большей кнопки */
+  background-color: #fff; /* Цвет фона (синий) */
+  color: #000000; /* Цвет текста (черный) */
+  border: 1px solid #000;
+  border-radius: 7px; /* Закругляем углы */
   cursor: pointer; /* Указываем, что это кнопка */
   transition: background-color 0.3s ease; /* Плавный переход для фона */
   font-size: 18px; /* Увеличиваем размер шрифта */
@@ -75,9 +98,31 @@ nav {
   background-color: #000; /* Черный цвет фона при наведении */
   color: #fff; /* Белый цвет текста при наведении */
 }
+.register-button:hover {
+  background-color: #000; /* Черный цвет фона при наведении */
+  color: #fff; /* Белый цвет текста при наведении */
+}
+
+.buttons {
+  display: flex;
+  gap: 40px; /* Расстояние между кнопками */
+}
 
 nav a {
   color: #000; /* Черный цвет текста */
   font-size: 23px; /* Увеличьте размер шрифта по необходимости */
   text-decoration: none; /* Убираем подчеркивание */
 }
+
+@font-face {
+  font-family: 'Pobeda';
+  src: url('./fonts/pobeda-regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Pobeda';
+  src: url('./fonts/pobeda-bold.ttf') format('truetype');
+  font-weight: bold;
+}
+

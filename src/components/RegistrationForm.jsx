@@ -55,7 +55,7 @@ const RegistrationForm = () => {
       <button type="submit" className="submit-button">
         Создать профиль
       </button>
-      <p>Уже есть аккаунт? <a href="/">Войти</a></p>
+      <p>Уже есть аккаунт? <a href="/login">Войти</a></p>
     </form>
   );
 };
