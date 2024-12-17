@@ -1,0 +1,33 @@
+.tour-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .tour-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensure 3 cards per row */
+    gap: 20px;
+    margin-left: 350px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .pagination button:hover {
+    background-color: #ddd;
+  }
+  

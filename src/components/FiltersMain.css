@@ -1,0 +1,95 @@
+.filters-topbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-top: 60px;
+    margin-left: 350px;
+  }
+  
+  .filters__container {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 8px 12px;
+    background-color: #fff;
+  }
+  
+  .filter__input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+  }
+  
+  .filter__checkbox {
+    margin-right: 10px;
+  }
+  
+  .filter__label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: black;
+  }
+  
+  .apply-button {
+    background-color: #76c893;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .apply-button:hover {
+    background-color: #f0f0f0;
+  }
+
+
+  .filters-sidebar {
+    width: 250px; /* Ширина бокового меню */
+    background-color: #ffffff; /* Белый фон */
+    color: #000; /* Чёрный цвет текста */
+    padding: 20px; /* Внутренние отступы */
+    border: 1px solid #ddd; /* Лёгкая рамка */
+    border-radius: 10px; /* Скруглённые углы */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Тень */
+    position: fixed; /* Фиксированное расположение */
+    top: 80px; /* Отступ сверху */
+    left: 30px; /* Отступ слева */
+    height: calc(100vh - 100px); /* Высота блока с учётом отступов */
+    overflow-y: auto; /* Скролл, если контент превышает высоту */
+    margin-top: 45px;
+  }
+  
+  .filters-sidebar h4 {
+    font-size: 18px; /* Размер заголовков */
+    font-weight: bold; /* Жирный текст */
+    margin-bottom: 15px; /* Отступ снизу */
+  }
+  
+  .filters-sidebar ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    margin: 0 0 20px; /* Отступ снизу между списками */
+  }
+  
+  .filters-sidebar ul li {
+    font-size: 14px; /* Размер текста элементов списка */
+    margin-bottom: 10px; /* Расстояние между элементами */
+    display: flex;
+    align-items: center; /* Вертикальное выравнивание текста и чекбоксов */
+  }
+  
+  .filters-sidebar input[type="checkbox"],
+  .filters-sidebar input[type="radio"] {
+    margin-right: 10px; /* Отступ справа от чекбоксов и радио-кнопок */
+  }
+  
+  .filters-sidebar input[type="radio"] {
+    margin-left: 5px; /* Дополнительный отступ для радио-кнопок */
+  }
+  

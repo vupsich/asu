@@ -7,6 +7,7 @@ import AuthorizationForm from './components/AuthorizationForm';
 import ImageSection from './components/ImageSection';
 import AnalyticsDashboard from './components/AnalyticsDashboard'; // Импорт новой страницы
 import './App.css';
+import TourListPage from './components/TourListPage';
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('token');
@@ -20,11 +21,12 @@ function App() {
         <div className="app">
           <Header />
           <Routes>
-            <Route path="/" element={<div className="main-content">Добро пожаловать на наш сайт!</div>} />
+            <Route path="/" element={<TourListPage />} />
             <Route path="/register" element={<RegistrationForm />} />
             <Route path="/login" element={<AuthorizationForm />} />
             <Route path="/analytics" element={<ProtectedRoute><AnalyticsDashboard /></ProtectedRoute>} />
             <Route path="/images" element={<ImageSection />} />
+            {/* <Route path="/TourListPage" element={<TourListPage />} /> */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>
