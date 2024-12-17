@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Charts.css";
 import {
   BarChart,
@@ -6,15 +6,19 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  PieChart,
-  Pie,
-  Cell,
   ResponsiveContainer,
   Legend,
 } from "recharts";
+import {
+  PieChart,  // добавьте импорт PieChart
+  Pie,       // добавьте импорт Pie
+  Cell       // добавьте импорт Cell
+} from "recharts"; // убедитесь, что все эти компоненты импортированы из библиотеки recharts
 
 const Charts = () => {
-  const registrationData = [
+  const [period, setPeriod] = useState("Год");
+
+  const registrationDataYear = [
     { name: "янв.", value: 20 },
     { name: "фев.", value: 15 },
     { name: "мар.", value: 18 },
@@ -27,6 +31,23 @@ const Charts = () => {
     { name: "окт.", value: 35 },
     { name: "ноя.", value: 40 },
     { name: "дек.", value: 45 },
+  ];
+
+  const registrationDataMonth = [
+    { name: "Неделя 1", value: 10 },
+    { name: "Неделя 2", value: 15 },
+    { name: "Неделя 3", value: 20 },
+    { name: "Неделя 4", value: 25 },
+  ];
+
+  const registrationDataWeek = [
+    { name: "Понед.", value: 5 },
+    { name: "Вторник", value: 8 },
+    { name: "Среда", value: 10 },
+    { name: "Четверг", value: 12 },
+    { name: "Пятница", value: 13 },
+    { name: "Суб.", value: 15 },
+    { name: "Воскр.", value: 16 },
   ];
 
   const genderData = [
@@ -52,18 +73,41 @@ const Charts = () => {
 
   const COLORS = ["#85b082", "#84a682", "#839d81", "#829381", "#818a80", "#808080"];
   const genderColors = ["#d4a8cc", "#57719b"];
+
+  const handlePeriodChange = (period) => {
+    setPeriod(period);
+  };
+
+  const getRegistrationData = () => {
+    switch (period) {
+      case "Неделя":
+        return registrationDataWeek;
+      case "Месяц":
+        return registrationDataMonth;
+      default:
+        return registrationDataYear;
+    }
+  };
+
   return (
     <div className="charts">
+      {/* Кнопки для выбора периода */}
+      
+
       {/* Годовая активность регистрации аккаунтов */}
-      <div className="chart__block">
-        <h3>Годовая активность регистрации аккаунтов</h3>
+      <div className="chart__block"><div className="period-buttons">
+        <button onClick={() => handlePeriodChange("Год")}>Год</button>
+        <button onClick={() => handlePeriodChange("Месяц")}>Месяц</button>
+        <button onClick={() => handlePeriodChange("Неделя")}>Неделя</button>
+      </div>
+        <h3>Активность регистрации аккаунтов ({period})</h3>
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={registrationData}>
+          <BarChart data={getRegistrationData()}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <Legend layout="horizontal" align="center" verticalAlign="bottom" />
-            <Bar dataKey="value" fill="#76c893" barSize={40} name="пользователь"/>
+            <Bar dataKey="value" fill="#76c893" barSize={40} name="Количество пользователей"/>
           </BarChart>
         </ResponsiveContainer>
       </div>
@@ -72,9 +116,9 @@ const Charts = () => {
       <div className="row">
         <div className="chart__block">
           <h3>Соотношение полов</h3>
-          <ResponsiveContainer width="100%" height={250} >
+          <ResponsiveContainer width="100%" height={250}>
             <PieChart>
-              <Legend layout="vertical" align="right" verticalAlign="middle" wrapperStyle={{  left: 410 }}/>
+              <Legend layout="vertical" align="right" verticalAlign="middle" wrapperStyle={{ left: 410 }} />
               <Pie
                 data={genderData}
                 dataKey="value"
@@ -96,7 +140,7 @@ const Charts = () => {
           <h3>Соотношение городов</h3>
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
-              <Legend layout="vertical" align="right" verticalAlign="middle" wrapperStyle={{  left: 410 }}/>
+              <Legend layout="vertical" align="right" verticalAlign="middle" wrapperStyle={{ left: 410 }} />
               <Pie
                 data={cityData}
                 dataKey="value"
@@ -121,7 +165,7 @@ const Charts = () => {
           <h3>Возраст по группам</h3>
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
-              <Legend layout="vertical" align="right" verticalAlign="middle" wrapperStyle={{  left: 410 }}/>
+              <Legend layout="vertical" align="right" verticalAlign="middle" wrapperStyle={{ left: 410 }} />
               <Pie
                 data={ageData}
                 dataKey="value"

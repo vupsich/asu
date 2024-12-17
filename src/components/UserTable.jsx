@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./UserTable.css";
 
-const UserTable = () => {
+const UserTable = ({ filters }) => {
   const users = [
     { name: "Иванов Сергей", email: "ivanovsergey.irkutsk@mail.ru", birthDate: "15-03-1995", gender: "Мужской", city: "Иркутск", language: "Русский" },
     { name: "Петрова Анна", email: "petrovaanna.angarsk@mail.ru", birthDate: "22-07-1990", gender: "Женский", city: "Ангарск", language: "Русский" },
@@ -24,17 +24,31 @@ const UserTable = () => {
     { name: "Лебедева Светлана", email: "lebedevasvetlana.irkutsk@mail.ru", birthDate: "03-02-1996", gender: "Женский", city: "Иркутск", language: "Русский" },
   ];
 
-  const [currentPage, setCurrentPage] = useState(1); // Состояние текущей страницы
-  const usersPerPage = 7; // Количество пользователей на странице
+  const filteredUsers = users.filter((user) => {
+    const { startDate, endDate, gender, city, language } = filters;
+  
+    // Преобразуем дату рождения из "dd-mm-yyyy" в "yyyy-mm-dd"
+    const [day, month, year] = user.birthDate.split("-");
+    const formattedBirthDate = `${year}-${month}-${day}`;
+  
+    return (
+      (!startDate || formattedBirthDate >= startDate) &&
+      (!endDate || formattedBirthDate <= endDate) &&
+      (gender === "all" || user.gender.toLowerCase() === gender.toLowerCase()) &&
+      (city === "all" || user.city === city) &&
+      (language === "all" || user.language === language)
+    );
+  });
 
-  // Рассчитываем индексы для текущей страницы
+  const [currentPage, setCurrentPage] = useState(1);
+  const usersPerPage = 7;
+
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
-  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+  const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
 
-  // Создаем массив номеров страниц
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(users.length / usersPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(filteredUsers.length / usersPerPage); i++) {
     pageNumbers.push(i);
   }
 
@@ -64,7 +78,7 @@ const UserTable = () => {
           ))}
         </tbody>
       </table>
-      {/* Контейнер с кнопками пагинации */}
+
       <div className="pagination-container">
         <button
           onClick={() => setCurrentPage(currentPage - 1)}

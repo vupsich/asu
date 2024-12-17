@@ -4,7 +4,8 @@
   left: 0;
   width: 100%; /* Растягиваем на всю ширину */
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 80px;
   align-items: center;
   padding: 10px 20px;
   background: #fff;
@@ -17,7 +18,7 @@
   font-size: 40px;
   font-weight: bold;
   color: #000;
-  margin-left: 10px;
+  margin-left: 1px;
 }
 
 .clickable-logo {
@@ -126,3 +127,25 @@
   font-weight: bold;
 }
 
+.logout-button {
+  
+  padding: 7px 30px; /* Увеличиваем отступы для большей кнопки */
+  background-color: #fff; /* Цвет фона (синий) */
+  color: #000000; /* Цвет текста (черный) */
+  border: 1px solid #000;
+  border-radius: 7px; /* Закругляем углы */
+  cursor: pointer; /* Указываем, что это кнопка */
+  transition: background-color 0.3s ease; /* Плавный переход для фона */
+  font-size: 18px; /* Увеличиваем размер шрифта */
+}
+
+.admin-button {
+  padding: 7px 30px; /* Увеличиваем отступы для большей кнопки */
+  background-color: #fff; /* Цвет фона (синий) */
+  color: #000000; /* Цвет текста (черный) */
+  border: 1px solid #000;
+  border-radius: 7px; /* Закругляем углы */
+  cursor: pointer; /* Указываем, что это кнопка */
+  transition: background-color 0.3s ease; /* Плавный переход для фона */
+  font-size: 18px; /* Увеличиваем размер шрифта */
+}

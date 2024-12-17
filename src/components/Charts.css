@@ -46,3 +46,31 @@
 .chart__block h3 {
   text-align: center; /* Центрирует текст */
 }
+
+/* Стили для кнопок выбора периода */
+.period-buttons button {
+  background-color: #ffffff; /* Белый фон */
+  color: #333333; /* Цвет текста */
+  border: 1px solid #000000; /* Черная оконтовка */
+  padding: 10px 20px; /* Внутренний отступ */
+  border-radius: 8px; /* Скругленные углы */
+  cursor: pointer; /* Указатель при наведении */
+  transition: background-color 0.3s, color 0.3s; /* Плавные изменения фона и цвета */
+  margin-right: 10px; /* Отступ справа между кнопками */
+}
+
+/* Убираем отступ у последней кнопки */
+.period-buttons button:last-child {
+  margin-right: 0;
+}
+
+/* Стили для кнопки при наведении */
+.period-buttons button:hover {
+  background-color: #000000; /* Черный фон при наведении */
+  color: #ffffff; /* Белый текст при наведении */
+}
+
+/* Стили для кнопки при активном состоянии */
+.period-buttons button:active {
+  background-color: #444444; 
+}
