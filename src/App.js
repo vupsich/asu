@@ -20,7 +20,7 @@ function App() {
           <Route
             path="/register"
             element={
-              <div className="container">
+              <div className="containerRL">
                 <ImageSection />
                 <RegistrationForm />
               </div>
@@ -31,7 +31,7 @@ function App() {
           <Route
             path="/login"
             element={
-              <div className="container">
+              <div className="containerRL">
                 <ImageSection />
                 <AuthorizationForm />
               </div>

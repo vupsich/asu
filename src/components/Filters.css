@@ -1,14 +1,46 @@
 .filters {
-    display: flex;
-    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку, если не хватает места */
-    gap: 20px; /* Промежуток между элементами */
-  }
-  
-  .filters__group {
-    display: flex;
-    align-items: center; /* Выравнивание элементов по центру по вертикали */
-  }
-  
-  .filter__input {
-    margin-left: 10px; /* Отступ между меткой и полем ввода */
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Промежуток между группами фильтров */
+}
+
+.filters__group {
+  display: flex;
+  align-items: center;
+}
+
+.filters__container {
+  display: flex;
+  align-items: center;
+  border: 1px solid black; /* Черная окантовка */
+  border-radius: 20px; /* Скругленные углы */
+  padding: 8px 12px; /* Внутренний отступ */
+  background-color: #fff; /* Белый фон */
+}
+
+.filter__input {
+  border: none;
+  outline: none;
+  background: transparent; /* Прозрачный фон */
+  font-size: 14px;
+}
+
+.filters__group label {
+  font-size: 14px;
+  color: black; /* Цвет текста меток */
+  margin-right: 10px; /* Отступ справа от метки */
+}
+
+.apply-button {
+  background-color: #76c893; /* Белый фон */
+  color: black; /* Черный текст */
+  font-size: 14px; /* Размер шрифта */
+  cursor: pointer; /* Указатель мыши */
+  text-align: center; /* Центрирование текста */
+  border-radius: 8px; /* Скругленные углы */
+  margin-left: 10px;
+}
+
+.apply-button:hover {
+  background-color: #f0f0f0; /* Светло-серый фон при наведении */
+}

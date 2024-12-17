@@ -1,0 +1,48 @@
+/* Общий контейнер для всех графиков */
+.charts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Отступ между блоками */
+}
+
+/* Отдельный блок для диаграммы */
+.chart__block {
+  background-color: #ffffff; /* Белый фон */
+  border-radius: 8px; /* Скругление углов */
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #A9D8B1;
+  margin-top: 5px;
+}
+
+/* Контейнер для диаграмм на одной линии */
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Равномерное распределение блоков в строке */
+.row .chart__block {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Центрирование и уменьшение блока */
+.centered-row {
+  display: flex;
+  justify-content: center; /* Центрирует блок по горизонтали */
+  width: 100%;
+}
+
+.chart__block--small {
+  max-width: 50%; /* Ширина блока */
+  min-width: 300px;
+}
+
+.chart__block h3 {
+  text-align: center; /* Центрирует текст */
+}

@@ -1,0 +1,9 @@
+<svg width="300" height="60" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: 'Pobeda', sans-serif; font-size: 40px; font-weight: bold; }
+    .red { fill: red; }
+    .black { fill: black; }
+  </style>
+  <text x="0" y="40" class="text red">С</text>
+  <text x="25" y="40" class="text black">В Е Т Л И Ц А</text> <!-- Уменьшено значение x -->
+</svg>

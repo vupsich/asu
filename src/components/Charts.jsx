@@ -1,5 +1,5 @@
 import React from "react";
-// import "./Charts.css";
+import "./Charts.css";
 import {
   BarChart,
   Bar,
@@ -10,6 +10,7 @@ import {
   Pie,
   Cell,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
 
 const Charts = () => {
@@ -34,7 +35,7 @@ const Charts = () => {
   ];
 
   const cityData = [
-    { name: "Иркутск", value: 66 },
+    { name: "Иркутск", value: 65 },
     { name: "Ангарск", value: 15 },
     { name: "Братск", value: 13 },
     { name: "Другие", value: 7 },
@@ -43,14 +44,14 @@ const Charts = () => {
   const ageData = [
     { name: "16-21 лет", value: 35 },
     { name: "22-30 лет", value: 25 },
-    { name: "31-40 лет", value: 18 },
-    { name: "41-47 лет", value: 11 },
-    { name: "48-55 лет", value: 6 },
+    { name: "31-40 лет", value: 15 },
+    { name: "41-47 лет", value: 10 },
+    { name: "48-55 лет", value: 5 },
     { name: "> 55 лет", value: 5 },
   ];
 
-  const COLORS = ["#76c893", "#40916c", "#95d5b2", "#52b788", "#2d6a4f", "#1b4332"];
-
+  const COLORS = ["#85b082", "#84a682", "#839d81", "#829381", "#818a80", "#808080"];
+  const genderColors = ["#d4a8cc", "#57719b"];
   return (
     <div className="charts">
       {/* Годовая активность регистрации аккаунтов */}
@@ -61,76 +62,82 @@ const Charts = () => {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Bar dataKey="value" fill="#76c893" barSize={40} />
+            <Legend layout="horizontal" align="center" verticalAlign="bottom" />
+            <Bar dataKey="value" fill="#76c893" barSize={40} name="пользователь"/>
           </BarChart>
         </ResponsiveContainer>
       </div>
 
-      {/* Соотношение полов */}
-      <div className="chart__block">
-        <h3>Соотношение полов</h3>
-        <ResponsiveContainer width="100%" height={250}>
-          <PieChart>
-            <Pie
-              data={genderData}
-              dataKey="value"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={80}
-              fill="#8884d8"
-              label
-            >
-              {genderData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index]} />
-              ))}
-            </Pie>
-          </PieChart>
-        </ResponsiveContainer>
-      </div>
+      {/* Группа из двух диаграмм на одной строке */}
+      <div className="row">
+        <div className="chart__block">
+          <h3>Соотношение полов</h3>
+          <ResponsiveContainer width="100%" height={250} >
+            <PieChart>
+              <Legend layout="vertical" align="right" verticalAlign="middle" wrapperStyle={{  left: 410 }}/>
+              <Pie
+                data={genderData}
+                dataKey="value"
+                nameKey="name"
+                cx="55%"
+                cy="50%"
+                outerRadius={80}
+                label
+              >
+                {genderData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={genderColors[index]} />
+                ))}
+              </Pie>
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
 
-      {/* Соотношение городов */}
-      <div className="chart__block">
-        <h3>Соотношение городов</h3>
-        <ResponsiveContainer width="100%" height={250}>
-          <PieChart>
-            <Pie
-              data={cityData}
-              dataKey="value"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={80}
-              label
-            >
-              {cityData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-          </PieChart>
-        </ResponsiveContainer>
+        <div className="chart__block">
+          <h3>Соотношение городов</h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <PieChart>
+              <Legend layout="vertical" align="right" verticalAlign="middle" wrapperStyle={{  left: 410 }}/>
+              <Pie
+                data={cityData}
+                dataKey="value"
+                nameKey="name"
+                cx="55%"
+                cy="50%"
+                outerRadius={80}
+                label
+              >
+                {cityData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
       </div>
 
       {/* Возраст по группам */}
-      <div className="chart__block">
-        <h3>Возраст по группам</h3>
-        <ResponsiveContainer width="100%" height={250}>
-          <PieChart>
-            <Pie
-              data={ageData}
-              dataKey="value"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={80}
-              label
-            >
-              {ageData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-          </PieChart>
-        </ResponsiveContainer>
+      <div className="centered-row">
+        <div className="chart__block chart__block--small">
+          <h3>Возраст по группам</h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <PieChart>
+              <Legend layout="vertical" align="right" verticalAlign="middle" wrapperStyle={{  left: 410 }}/>
+              <Pie
+                data={ageData}
+                dataKey="value"
+                nameKey="name"
+                cx="55%"
+                cy="50%"
+                outerRadius={80}
+                label
+              >
+                {ageData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
   );

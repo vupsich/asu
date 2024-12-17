@@ -9,11 +9,10 @@ import "./AnalyticsDashboard.css";
 const AnalyticsDashboard = () => {
   return (
     <div className="analytics-dashboard">
-      <Header />
+      <h1 className="h1AD">Администратор: анализ и управление</h1>
       <div className="dashboard-body">
         <Sidebar />
         <div className="content">
-          <h1>Экскурсовод: анализ и управление</h1>
           <h2>Анализ пользователей</h2>
           <Filters />
           <UserTable />

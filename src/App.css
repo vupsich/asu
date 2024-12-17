@@ -4,11 +4,14 @@
   min-height: 100vh; /* Высота видимой области */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Центрируем контейнер по вертикали */
+  position: relative; /* Добавлено для позиционирования дочерних элементов */
 }
 
-.container {
+.containerRL {
+  position: absolute; /* Устанавливаем абсолютное позиционирование */
+  top: 50%; /* Сдвигаем вниз на 50% высоты родителя */
+  left: 50%; /* Сдвигаем вправо на 50% ширины родителя */
+  transform: translate(-50%, -50%); /* Центрируем контейнер */
   display: flex; /* Включаем Flexbox для контейнера */
   align-items: center; /* Центрируем элементы внутри по вертикали */
   justify-content: center; /* Центрируем элементы внутри по горизонтали */
@@ -17,5 +20,5 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* Убрали margin-top */
+  width: 800px;
 }

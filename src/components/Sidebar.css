@@ -2,14 +2,17 @@
 
 .sidebar {
   width: 250px; /* Ширина бокового меню */
-  background-color: #2c3e50; /* Цвет фона */
-  color: white; /* Цвет текста */
-  padding: 20px; /* Отступы внутри бокового меню */
-  height: 100vh; /* Высота на весь экран */
+  background-color: #ffffff; /* Цвет фона */
+  color: rgb(0, 0, 0); /* Цвет текста */
+  padding: 25px; /* Отступы внутри бокового меню */
+  
   position: fixed; /* Фиксированное положение */
   left: 0; /* Прикрепить к левой части */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Тень для бокового меню */
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.5); /* Тень для бокового меню */
   overflow-y: auto; /* Позволяет прокручивать содержимое, если оно превышает высоту */
+  margin: 30px 0 0 30px;
+  border: 1px solid #000;
+  border-radius: 10px;
 }
   
   .sidebar__menu {
@@ -21,11 +24,13 @@
     font-size: 1.5em; /* Размер шрифта заголовка */
     margin-bottom: 10px; /* Отступ снизу */
     text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    margin: 0; /* Убираем отступы у ul */
   }
   
   .menu__list {
     list-style: none; /* Убираем маркеры списка */
     padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем отступы у ul */
   }
   
   .menu__list li {
@@ -33,9 +38,10 @@
   }
   
   .menu__list li a {
-    color: white; /* Цвет ссылок */
+    color: rgb(0, 0, 0); /* Цвет ссылок */
     text-decoration: none; /* Убираем подчеркивание */
     transition: color 0.3s; /* Плавный переход цвета */
+    font-size: 19px;
   }
   
   .menu__list li a:hover {
