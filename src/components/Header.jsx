@@ -11,7 +11,7 @@ const Header = () => {
           <span className="red-letter">С </span>В Е Т Л И Ц А
         </Link>
       </div>
-      <nav>
+      <nav className="navh">
         <Link to="/">Экскурсии</Link>
         <Link to="/">Организаторы</Link>
         <div className="search-container">

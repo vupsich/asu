@@ -1,0 +1,44 @@
+/* Sidebar.css */
+
+.sidebar {
+  width: 250px; /* Ширина бокового меню */
+  background-color: #2c3e50; /* Цвет фона */
+  color: white; /* Цвет текста */
+  padding: 20px; /* Отступы внутри бокового меню */
+  height: 100vh; /* Высота на весь экран */
+  position: fixed; /* Фиксированное положение */
+  left: 0; /* Прикрепить к левой части */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Тень для бокового меню */
+  overflow-y: auto; /* Позволяет прокручивать содержимое, если оно превышает высоту */
+}
+  
+  .sidebar__menu {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов */
+  }
+  
+  .menu__title {
+    font-size: 1.5em; /* Размер шрифта заголовка */
+    margin-bottom: 10px; /* Отступ снизу */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  }
+  
+  .menu__list {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+  }
+  
+  .menu__list li {
+    margin: 10px 0; /* Отступы между элементами списка */
+  }
+  
+  .menu__list li a {
+    color: white; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: color 0.3s; /* Плавный переход цвета */
+  }
+  
+  .menu__list li a:hover {
+    color: #3498db; /* Цвет ссылок при наведении */
+  }
+  
